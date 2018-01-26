@@ -44,6 +44,7 @@ A well written README file can enhance your project and portfolio.  Develop your
 [image5]: ./result_image/bboxes_and_heat.png
 [image6]: ./result_image/labels_map.png
 [image7]: ./result_image/output_bboxes.png
+[image8]: ./result_image/region_bboxes.png
 [video1]: ./project_video_result.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
@@ -121,9 +122,11 @@ After obtained the first image position, i just recorded the current frame regio
 at the same time, for detect unknow vehicle, i set two region in image left bound and right bound.
 
 
+
+
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
-1)for the first frame, slide windows to split image. for next frame, use former location and bound region to make original image, then goto scatter by slide windows. 
+1)for the first frame, slide 64 size windows to split image with resize image scale [2,3] by overlay 2 piexls . for next frame, use former location and bound region to make original image  with resize image scale = yposition *1.5 /image_ysize, then goto scatter by slide windows. 
 
 2)abstract region image features including YCrCb 3-channel HOG features plus spatially binned color an d histograms of color in the feature vector in two scales
 
