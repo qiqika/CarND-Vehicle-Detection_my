@@ -90,7 +90,7 @@ I trained a linear SVM ,as :
 | Parameters    | Values   | 
 |:-------------:|:-------------:| 
 | C             | 1             |
-| kernel        | 'rbf'?        |
+| kernel        | 'rbf'         |
 | degree        | 3             |
 | gamma         | 'auto'        |
 | coef0         | 0             |
