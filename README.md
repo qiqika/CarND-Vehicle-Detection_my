@@ -112,10 +112,14 @@ I trained a linear SVM ,as :
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-For first frame, I decided to search window positions in two scales image(scale = [2,3]). After obtained the first image position, i just recorded the current frame region and used this location to search next frame.
-at the same time, for detect unknow vehicle, i set two region in image left bound and right bound. and came up with this:
+For first frame, I decided to search 64 size window positions in two scales image(scale = [2,3]) by overlay two pixels.
+
+After obtained the first image position, i just recorded the current frame region and used this location to search next frame with ratio scales and like :
 
 ![alt text][image3]
+
+at the same time, for detect unknow vehicle, i set two region in image left bound and right bound.
+
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
