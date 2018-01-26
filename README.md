@@ -37,13 +37,13 @@ A well written README file can enhance your project and portfolio.  Develop your
 
 
 [//]: # (Image References)
-[image1]: ./result image/car_not_car.png
-[image2]: ./result image/HOG_example.png
-[image3]: ./result image/sliding_windows.png
-[image4]: ./result image/sliding_window.png
-[image5]: ./result image/bboxes_and_heat.png
-[image6]: ./result image/labels_map.png
-[image7]: ./result image/output_bboxes.png
+[image1]: ./result_image/car_not_car.png
+[image2]: ./result_image/HOG_example.png
+[image3]: ./result_image/sliding_windows.png
+[image4]: ./result_image/sliding_window.png
+[image5]: ./result_image/bboxes_and_heat.png
+[image6]: ./result_image/labels_map.png
+[image7]: ./result_image/output_bboxes.png
 [video1]: ./project_video_result.mp4
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/513/view) Points
@@ -138,7 +138,7 @@ Here are some example images:
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./project_video_result.mp4)
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
