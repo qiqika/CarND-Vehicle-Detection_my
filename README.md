@@ -119,9 +119,9 @@ After obtained the first image position, i just recorded the current frame regio
 
 ![alt text][image3]
 
-at the same time, for detect unknow vehicle, i set two region in image left bound and right bound.
+at the same time, for detect unknow vehicle, i set two region in image left bound and right bound， region as follow:
 
-
+![alt text][image8]
 
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
