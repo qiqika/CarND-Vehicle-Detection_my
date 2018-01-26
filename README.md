@@ -128,9 +128,9 @@ at the same time, for detect unknow vehicle, i set two region in image left boun
 
 1)for the first frame, slide 64 size windows to split image with resize image scale [2,3] by overlay 2 piexls . for next frame, use former location and bound region to make original image  with resize image scale = yposition *1.5 /image_ysize, then goto scatter by slide windows. 
 
-2)abstract region image features including YCrCb 3-channel HOG features plus spatially binned color an d histograms of color in the feature vector in two scales
+2)abstract region image features including YCrCb 3-channel HOG features plus spatially binned color an d histograms of color in the feature vector in two scales for making redundance to train SVM
 
-3)normalize feature for predict in SVM
+3)normalize feature for predict in SVM to avoid overfit
 
 4)use heat image to segment vehicle
 
