@@ -68,20 +68,22 @@ I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an 
 
 I then explored RGB, HSV, LUV, HLS, YUV, YCrCb color spaces and different `skimage.hog()` parameters (`orientations`, `pixels_per_cell`, and `cells_per_block`).  I grabbed random images from each of the two classes and displayed them to get a feel for what the `skimage.hog()` output looks like.
 
-Here is an example using the `YCrCb` color space and HOG parameters of `orientations=8`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
+Here is an example using the `YCrCb` color space and HOG parameters of `orientations=9`, `pixels_per_cell=(8, 8)` and `cells_per_block=(2, 2)`:
 
 
 ![alt text][image2]
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I tried various combinations of parameters and as follow:
+I tried various combinations of parameters and like:
 
 | Parameters    | Values   | 
 |:-------------:|:-------------:| 
 | orient        | 9             |
 | pix_per_cell  | 8             |
 | cell_per_block| 2             |
+
+Large orient dont effect final HOG results. but large pix_per_cell will amplify direction information and make the cross shape in hog image. small pix_per_cell will lead to lose more unuseful shape information. large cell_per_block will lead to lose shape information. small cell_per_block, like small pix_per_cell,  will lead to add more unuseful shape information.
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
@@ -110,12 +112,10 @@ I trained a linear SVM ,as :
 
 #### 1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-For first frame, I decided to search window positions in two scales image and came up with this:
+For first frame, I decided to search window positions in two scales image(scale = [2,3]). After obtained the first image position, i just recorded the current frame region and used this location to search next frame.
+at the same time, for detect unknow vehicle, i set two region in image left bound and right bound. and came up with this:
 
 ![alt text][image3]
-
-After obtained the first image position, i just recorded the current frame region and used this location to search next frame.
-at the same time, for detect unknow vehicle, i set two region in image left bound and right bound. 
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working.  What did you do to optimize the performance of your classifier?
 
@@ -172,13 +172,13 @@ robust: each image position use different scales and SVM use more dimentions fea
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
-I used HOG and other features for encoding. HOG can well describe the image direction information without light and scale disturb.
+1)I used HOG and other features for encoding. HOG can well describe the image direction information without light and scale disturb.
 
-SVM use optimal function for finding margin in two classes and the key is the kernel include linear and nonlinear kernel operator.
+2)SVM use optimal function for finding margin in two classes and the key is the kernel include linear and nonlinear kernel operator.
 
-pipeline fail may because the search scale is two large or small compering with SVM train image size. Besides, image have shelter or large distort to standard image.
+3)pipeline fail may because the search scale is two large or small compering with SVM train image size. Besides, image have shelter or large distort to standard image.
 
-train more different image for SVM is good idea. and we can use more complicated feature like Deeplearn. but it will need more calculation.
+4)train more different image for SVM is good idea. and we can use more complicated feature like Deeplearn. but it will need more calculation.
 
 
 
